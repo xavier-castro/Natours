@@ -2,17 +2,37 @@
     max-width: $grid-width; // Standard size is 1140 pixels
     margin: 0 auto; // Centers
 
-    &:not(:last-child) { // Selects everything except the last child
+    &:not(:last-child) {
+        // Selects everything except the last child
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
 
-    [class^="col-"] { // Selects all elements that start with 'col-'
+    [class^="col-"] {
+        // Selects all elements that start with 'col-'
         float: left;
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
