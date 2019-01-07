@@ -55,6 +55,7 @@
         top: 0;
         left: 0;
         z-index: 1500;
+
         opacity: 0;
         width: 0;
         transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
@@ -105,13 +106,13 @@
 
 
     // FUNCTIONALITY
-    &__checkbox:checked~&__background {
+    &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
 
-    &__checkbox:checked~&__nav {
+    &__checkbox:checked ~ &__nav {
         opacity: 1;
-        width: 100vh;
+        width: 100%;
     }
 
     // ICON
